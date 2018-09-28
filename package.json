@@ -10,6 +10,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-pro-webfonts": "^1.0.9",
     "buefy": "^0.6.7",
+    "mousetrap": "^1.6.2",
     "vue": "^2.5.17",
     "vue-class-component": "^6.2.0",
     "vue-router": "^3.0.1"
