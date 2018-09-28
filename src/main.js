@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import 'vue-plyr'
+import 'vue-plyr/dist/vue-plyr.css'
 
 import '@/style/theme'
 
