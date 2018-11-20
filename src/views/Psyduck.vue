@@ -9,7 +9,7 @@
 
 <template lang="pug">
   vue-plyr.video-player(:options="playerOptions")
-    video(src="https://s3.amazonaws.com/vinh.cloud/Psyduck+Compilation.mp4", preload="auto")
+    video(src="https://d3p9nru6jnw4jy.cloudfront.net/Psyduck+Compilation.mp4", preload="auto")
 </template>
 
 <script>
