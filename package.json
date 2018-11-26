@@ -9,18 +9,18 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-pro-webfonts": "^1.0.9",
-    "buefy": "^0.6.7",
+    "buefy": "^0.7.1",
     "vue": "^2.5.17",
-    "vue-class-component": "^6.2.0",
-    "vue-plyr": "^4.0.0",
-    "vue-router": "^3.0.1"
+    "vue-class-component": "^6.3.2",
+    "vue-plyr": "^5.0.4",
+    "vue-router": "^3.0.2"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.4",
-    "@vue/cli-plugin-eslint": "^3.0.4",
-    "@vue/cli-service": "^3.0.4",
-    "@vue/eslint-config-standard": "^3.0.4",
-    "node-sass": "^4.9.0",
+    "@vue/cli-plugin-babel": "^3.1.1",
+    "@vue/cli-plugin-eslint": "^3.1.5",
+    "@vue/cli-service": "^3.1.4",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "node-sass": "^4.10.0",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^7.0.1",
