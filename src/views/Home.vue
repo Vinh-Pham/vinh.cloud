@@ -10,14 +10,21 @@
         i.icon.github
       button.btn(@click="$router.push({ name: 'psyduck' })")
         img.psyduck(src="../assets/1054.png", width="35")
-    div.info.container.with-title
+    div.info.container.is-dark.with-title
       p.title Info
-      p I am a JavaScript developer from Frisco, TX.
+      p.description I am a JavaScript developer from Frisco, TX.
     div.footer
       p Vinh T. Pham &copy; 2018
+
+    vue-particles.particles(color="#000", linesColor="#000")
 </template>
 
 <script>
+import Vue from 'vue'
+import VueParticles from 'vue-particles'
+
+Vue.use(VueParticles)
+
 export default {
   name: 'home',
   methods: {
@@ -44,6 +51,7 @@ export default {
 
     .navigation {
       margin-bottom: $--spacer * 2;
+      z-index: 999;
 
       .btn:not(:last-child) {
         margin-right: $--spacer * 2;
@@ -53,11 +61,21 @@ export default {
     .info {
       width: 500px;
       margin-bottom: $--spacer * 2;
+
+      .description {
+        color: white;
+      }
     }
 
     .footer {
       display: flex;
       justify-content: center;
     }
+  }
+
+  .particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
 </style>
