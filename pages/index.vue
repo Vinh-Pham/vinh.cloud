@@ -1,7 +1,7 @@
 <template lang="pug">
   div.home
     transition(name="fade", enter-active-class="fadeInDown")
-      img.logo(v-if="show", src="../assets/logo.svg")
+      img.logo(v-if="show", src="@/assets/images/logo.svg")
     transition(name="fade", enter-active-class="fadeInUp")
       div.transition-group-navigation(v-if="show")
         div.navigation
@@ -11,8 +11,8 @@
             i.icon.twitter
           button.btn(@click="goToUrl('https://github.com/Vinh-Pham')")
             i.icon.github
-          button.btn(@click="$router.push({ name: 'psyduck' })")
-            img.psyduck(src="../assets/1054.png", width="35")
+          button.btn(@click="$router.push({ path: '/psyduck' })")
+            img.psyduck(src="@/assets/images/1054.png", width="35")
     transition(name="fade", enter-active-class="fadeInUp")
       div.transition-group-about(v-if="show")
         div.info.container.is-dark.with-title
@@ -22,7 +22,7 @@
           p.title Projects
           div.project-links
             p Check back soon.
-            //- a.description(@click="$router.push({ name: 'reddit-backup-tool' })") Reddit Backup Tool
+            //- a.description(@click="$router.push({ path: '/reddit' })") Reddit Backup Tool
         div.footer
           p Vinh T. Pham &copy; 2018
 
@@ -30,20 +30,22 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import VueParticles from 'vue-particles'
-
-Vue.use(VueParticles)
-
 export default {
-  name: 'home',
+  name: 'Index',
   data () {
     return {
       show: false
     }
   },
+  head () {
+    return {
+      title: 'Vinh T. Pham'
+    }
+  },
   mounted () {
-    window.setTimeout(() => this.show = true, 500)
+    window.setTimeout(() => {
+      this.show = true
+    }, 500)
   },
   methods: {
     goToUrl (url) {
@@ -54,7 +56,7 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '../style/variables';
+  @import '../assets/css/variables';
 
   .home {
     height: 100%;

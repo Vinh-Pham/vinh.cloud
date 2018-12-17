@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'psyduck',
+  name: 'Psyduck',
   data () {
     return {
       playerOptions: {
@@ -22,6 +22,11 @@ export default {
         seekTime: 5,
         keyboard: { focused: true, global: true }
       }
+    }
+  },
+  head () {
+    return {
+      title: 'Vinh T. Pham | Psyduck'
     }
   }
 }
