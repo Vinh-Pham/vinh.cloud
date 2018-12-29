@@ -4,6 +4,8 @@ name: default
 steps:
 - name: install
   image: node:10.15.0
+  environment:
+    - VIRTUAL_HOST: vinh.cloud
   commands:
     - npm install
 

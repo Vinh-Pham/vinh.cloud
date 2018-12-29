@@ -1,3 +1,13 @@
-$--spacer: 8px;
+@import 'colors-sass/sass/colors.scss';
 
-@import "~colors-sass/sass/colors.scss";
+@font-face {
+  font-family: 'Press Start 2P';
+  src: url('~assets/fonts/PressStart2P-Regular.eot');
+  src: url('~assets/fonts/PressStart2P-Regular.eot?#iefix') format('embedded-opentype'),
+    url('~assets/fonts/PressStart2P-Regular.woff2') format('woff2'),
+    url('~assets/fonts/PressStart2P-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$--spacer: 8px;

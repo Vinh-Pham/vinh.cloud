@@ -5,20 +5,20 @@
     transition(name="fade", enter-active-class="fadeInUp")
       div.transition-group-navigation(v-if="show")
         div.navigation
-          button.btn(@click="goToUrl('https://www.facebook.com/vinhsterrr')")
-            i.icon.facebook
-          button.btn(@click="goToUrl('https://twitter.com/VinhTPham')")
-            i.icon.twitter
-          button.btn(@click="goToUrl('https://github.com/Vinh-Pham')")
-            i.icon.github
-          button.btn(@click="$router.push({ path: '/psyduck' })")
+          button.nes-btn(@click="goToUrl('https://www.facebook.com/vinhsterrr')")
+            i.nes-icon.facebook
+          button.nes-btn(@click="goToUrl('https://twitter.com/VinhTPham')")
+            i.nes-icon.twitter
+          button.nes-btn(@click="goToUrl('https://github.com/Vinh-Pham')")
+            i.nes-icon.github
+          button.nes-btn(@click="$router.push({ path: '/psyduck' })")
             img.psyduck(src="@/assets/images/1054.png", width="35")
     transition(name="fade", enter-active-class="fadeInUp")
       div.transition-group-about(v-if="show")
-        div.info.container.is-dark.with-title
+        div.info.nes-container.is-dark.with-title
           p.title Info
           p.description I am a JavaScript developer from Frisco, TX.
-        div.info.container.is-dark.with-title
+        div.info.nes-container.is-dark.with-title
           p.title Projects
           div.project-links
             p Check back soon.
@@ -26,7 +26,8 @@
         div.footer
           p Vinh T. Pham &copy; 2018
 
-    vue-particles.particles(color="#000", linesColor="#000")
+    no-ssr
+      vue-particles.particles(color="#000", linesColor="#000")
 </template>
 
 <script>
@@ -75,7 +76,7 @@ export default {
       .navigation {
         margin-bottom: $--spacer * 2;
 
-        .btn:not(:last-child) {
+        .nes-btn:not(:last-child) {
           margin-right: $--spacer * 2;
         }
       }
