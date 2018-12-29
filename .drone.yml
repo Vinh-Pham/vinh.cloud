@@ -1,10 +1,6 @@
-kind: pipeline
-name: vinh.cloud
-
-steps:
-- name: frontend
-  image: node
+build:
+  image: node:10.15.0
   commands:
-  - npm install
-  - npm run build
-  - npm run start
+    - npm install
+    - npm run build
+    - npm run start
