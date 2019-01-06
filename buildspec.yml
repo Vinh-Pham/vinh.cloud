@@ -6,11 +6,19 @@ phases:
       - npm install
     finally:
       - npm i -g pm2 nuxt-start
+  pre_build:
+    commands:
+      - aws --version
+      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+      - REPOSITORY_URI=726663376655.dkr.ecr.us-east-1.amazonaws.com/vinh/vinh-cloud
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
     commands:
       - npm run build
   post_build:
     commands:
       - pm2 start ecosystem.config.js
+      - printf '[{"name":"vinh.cloud","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
   files: imagedefinitions.json
