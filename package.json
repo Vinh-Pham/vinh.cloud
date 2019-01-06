@@ -18,6 +18,7 @@
     "cross-env": "^5.2.0",
     "nes.css": "^1.0.0",
     "nuxt": "^2.0.0",
+    "nuxt-start": "^2.3.4",
     "vue-particles": "^1.0.9",
     "vue-plyr": "^5.0.4",
     "vue2-animate": "^2.1.0"
