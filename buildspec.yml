@@ -5,7 +5,7 @@ phases:
     commands:
       - npm install
     finally:
-      - npm i -g pm2
+      - npm i -g pm2 nuxt-start
   build:
     commands:
       - npm run build
