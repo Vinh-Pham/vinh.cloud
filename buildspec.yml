@@ -4,8 +4,6 @@ phases:
   install:
     commands:
       - npm install
-    finally:
-      - npm i -g pm2 nuxt-start
   pre_build:
     commands:
       - aws --version
@@ -18,7 +16,6 @@ phases:
       - npm run build
   post_build:
     commands:
-      - pm2 start ecosystem.config.js
-      - printf '[{"name":"vinh.cloud","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"vinh-cloud","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
   files: imagedefinitions.json
