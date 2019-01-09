@@ -24,7 +24,7 @@
             p Check back soon.
             //- a.description(@click="$router.push({ path: '/reddit' })") Reddit Backup Tool
         div.footer
-          p Vinh T. Pham &copy; 2018
+          p Vinh T. Pham &copy; 2018-{{ (new Date()).getFullYear() }}
 
     no-ssr
       vue-particles.particles(color="#000", linesColor="#000")
