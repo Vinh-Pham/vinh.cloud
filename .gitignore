@@ -79,5 +79,6 @@ dist
 
 # IDE
 .idea
-/.DS_Store
-.DS_Store
+
+# Service worker
+sw.*

@@ -1,55 +1,116 @@
 <template lang="pug">
-  div.home
-    transition(name="fade", enter-active-class="fadeInDown")
-      img.logo(v-if="show", src="@/assets/images/logo.svg")
-    transition(name="fade", enter-active-class="fadeInUp")
-      div.transition-group-navigation(v-if="show")
-        div.navigation
-          button.nes-btn(@click="goToUrl('https://www.facebook.com/vinhsterrr')")
-            i.nes-icon.facebook
-          button.nes-btn(@click="goToUrl('https://twitter.com/VinhTPham')")
-            i.nes-icon.twitter
-          button.nes-btn(@click="goToUrl('https://github.com/Vinh-Pham')")
-            i.nes-icon.github
-          button.nes-btn(@click="$router.push({ path: '/psyduck' })")
-            img.psyduck(src="@/assets/images/1054.png", width="35")
-    transition(name="fade", enter-active-class="fadeInUp")
-      div.transition-group-about(v-if="show")
-        div.info.nes-container.is-dark.with-title
-          p.title Info
-          p.description I am a JavaScript developer from Frisco, TX.
-        div.info.nes-container.is-dark.with-title
-          p.title Projects
-          div.project-links
-            p Check back soon.
-            //- a.description(@click="$router.push({ path: '/reddit' })") Reddit Backup Tool
-        div.footer
-          p Vinh T. Pham &copy; 2018-{{ (new Date()).getFullYear() }}
+  full-page(ref="fullpage", :options="options", id="fullpage")
+    div.section
+      .main
+        transition(name="fade", enter-active-class="fadeInDown")
+          img.logo(v-if="show", src="@/assets/images/logo.svg", width="300")
+        transition(name="fade", enter-active-class="fadeInUp")
+          div.transition-group-navigation(v-if="show")
+            h1.name Vinh T. Pham
+        transition(name="fade", enter-active-class="fadeInUp")
+          span.transition-group-navigation.social-links(v-if="show")
+            a(href="https://www.facebook.com/vinhsterrr")
+              fa(:icon="['fab', 'facebook-f']", size="2x")
+            a(href="https://twitter.com/VinhTPham")
+              fa(:icon="['fab', 'twitter']", size="2x")
+            a(href="https://github.com/Vinh-Pham")
+              fa(:icon="['fab', 'github']", size="2x")
+        //- transition(name="fade", enter-active-class="fadeIn")
+          div.transition-group-navigation(v-if="scrollFade")
+            .scroll-down
+              span Scroll
+              fa(icon="arrow-alt-down", size="3x")
+        #particles-js
 
-    no-ssr
-      vue-particles.particles(color="#000", linesColor="#000")
+    //- div.section Second section ...
+    //- div.section Second section ...
+    //- div.section Second section ...
+    //- div.section
+    //-   .contact
+    //-     div.footer
+    //-       p Vinh T. Pham &copy; 2018-{{ (new Date()).getFullYear() }}
 </template>
 
 <script>
+import particlesJS from 'particles.js' // eslint-disable-line
+import particlesConfig from '../static/particles.json'
+
 export default {
   name: 'Index',
-  data () {
+  data() {
     return {
-      show: false
+      title: 'Vinh T. Pham',
+      show: false,
+      scrollFade: false,
+      options: {
+        licenseKey: '68F86791-D59349D0-82FEA56E-5C8A2D10',
+        menu: '#menu',
+        anchors: ['title', 'about', 'projects', 'links', 'contact'],
+        sectionsColor: ['#000', '#2C8993', '#FF6B35', '#0C7C59', '#FFF'],
+        // navigation: true,
+        navigationPosition: 'right',
+        onLeave: this.onLeave
+      }
     }
   },
-  head () {
+  head() {
     return {
-      title: 'Vinh T. Pham'
+      title: this.title
     }
   },
-  mounted () {
+  async mounted() {
+    await this.$nextTick()
+
+    window.particlesJS('particles-js', particlesConfig)
+
     window.setTimeout(() => {
+      this.scrollFade = true
       this.show = true
     }, 500)
+
+    window.setInterval(() => {
+      this.scrollFade = !this.scrollFade
+    }, 1250)
   },
   methods: {
-    goToUrl (url) {
+    onLeave(origin, destination, direction) {
+      switch (destination.index) {
+        case 0:
+          this.scrollFade = false
+          this.updateTitle()
+          this.setNavColor('rgba(255, 255, 255, 0.5)')
+          break
+        case 1:
+          this.updateTitle('About')
+          this.setNavColor('rgba(0, 0, 0, 0.7)')
+          break
+        case 2:
+          this.updateTitle('Projects')
+          break
+        case 3:
+          this.updateTitle('Links')
+          break
+        case 4:
+          this.updateTitle('Contact')
+          break
+        default: break
+      }
+    },
+    updateTitle(section = '') {
+      if (!section) {
+        this.title = 'Vinh T. Pham'
+      } else {
+        this.title = `Vinh T. Pham | ${section}`
+      }
+    },
+    setNavColor(color) {
+      const el = document.querySelectorAll('#fp-nav ul li a span')
+
+      el.forEach((anchor) => {
+        anchor.style.backgroundColor = color
+      })
+    },
+    goToUrl(url) {
       location.href = url
     }
   }
@@ -59,15 +120,44 @@ export default {
 <style lang="scss">
   @import '../assets/css/variables';
 
-  .home {
+  #fp-nav ul li a span {
+    background-color: darken(#FFF, 25%);
+  }
+
+  .main {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+
+    h1 {
+      color: white;
+      filter: opacity(70%);
+    }
 
     .logo {
       margin-bottom: $--spacer;
+      filter: opacity(70%);
+    }
+
+    .name {
+      font-family: 'Special Elite', cursive;
+      font-size: 4rem;
+    }
+
+    .scroll-down {
+      color: white;
+      filter: opacity(70%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      text-align: center;
+      bottom: $--spacer * 2;
+      left: 0;
+      right: 0;
     }
 
     .transition-group-navigation {
@@ -82,46 +172,33 @@ export default {
       }
     }
 
-    .transition-group-about {
-      .info {
-        width: 500px;
-        margin-bottom: $--spacer * 2;
+    .social-links {
+      display: flex;
+      align-items: center;
+      z-index: 999;
 
-        .description {
+      a {
+        color: rgba(255, 255, 255, 0.7);
+
+        &:hover {
           color: white;
         }
-
-        .project-links {
-          z-index: 999;
-
-          p {
-            color: white;
-          }
-
-          a {
-            color: $blue;
-            text-decoration: none;
-
-            &:hover, &:focus {
-              color: $teal;
-              text-decoration: underline;
-              cursor: pointer;
-            }
-          }
-        }
       }
 
-      .footer {
-        display: flex;
-        justify-content: center;
+      a:not(:last-child) {
+        margin-right: $--spacer * 4;
       }
     }
-
   }
 
-  .particles {
+  .footer {
+    display: flex;
+    justify-content: center;
+  }
+
+  #particles-js {
     position: absolute;
-    width: 100%;
     height: 100%;
+    width: 100%;
   }
 </style>

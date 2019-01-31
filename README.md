@@ -1,6 +1,6 @@
-# Vinh.cloud
+# vinh.cloud
 
-> My personal website
+> Official Vinh T. Pham Site
 
 ## Build Setup
 
