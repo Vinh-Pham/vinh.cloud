@@ -25,7 +25,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'nes.css/scss/nes.scss',
+    'element-ui/lib/theme-chalk/index.css',
     'vue-plyr/dist/vue-plyr.css',
     'vue2-animate/src/sass/vue2-animate.scss',
     '@fortawesome/fontawesome-svg-core/styles.css',
