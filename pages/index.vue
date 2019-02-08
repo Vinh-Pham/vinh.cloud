@@ -26,10 +26,10 @@
 
       .dot1, .dot2 {
         position: absolute;
-        top: -8px;
-        left: -8px;
-        width: 1rem;
-        height: 1rem;
+        top: -4px;
+        left: -4px;
+        width: 0.5rem;
+        height: 0.5rem;
         background: white;
         filter: opacity(95%);
         border-radius: 50%;
@@ -220,7 +220,7 @@ export default {
           translateY: path2('y'),
           rotate: path2('angle'),
           easing: 'linear',
-          duration: 5000,
+          duration: 10000,
           loop: true
         })
 
