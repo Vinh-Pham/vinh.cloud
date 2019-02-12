@@ -125,7 +125,7 @@
         transition(name="fade", enter-active-class="fadeInUp")
           div.transition-group-navigation(v-if="show")
             h1.name Vinh T. Pham
-        transition(name="fade", enter-active-class="fadeInUp")
+        //- transition(name="fade", enter-active-class="fadeInUp")
           span.transition-group-navigation.social-links(v-if="show")
             a(href="https://www.facebook.com/vinhsterrr")
               fa(:icon="['fab', 'facebook-f']", size="2x")
@@ -133,21 +133,21 @@
               fa(:icon="['fab', 'twitter']", size="2x")
             a(href="https://github.com/Vinh-Pham")
               fa(:icon="['fab', 'github']", size="2x")
-        //- transition(name="fade", enter-active-class="fadeIn")
+        transition(name="fade", enter-active-class="fadeIn")
           div.transition-group-navigation(v-if="show")
             .scroll-down
               span.text Scroll
               fa(icon="arrow-alt-down", size="3x")
         #particles-js
 
-    //- div.section
-    //-   About
-    //- div.section
-    //-   Projects
-    //- div.section
-    //-   Links
-    //- div.section
-    //-   Contact
+    div.section
+      About
+    div.section
+      Projects
+    div.section
+      Links
+    div.section
+      Contact
       //- div.footer
       //-   p Vinh T. Pham &copy; 2018-{{ (new Date()).getFullYear() }}
 </template>
@@ -178,7 +178,7 @@ export default {
         menu: '#menu',
         anchors: ['title', 'about', 'projects', 'links', 'contact'],
         sectionsColor: ['#000', '#2C8993', '#FF6B35', '#0C7C59', '#FFF'],
-        // navigation: true,
+        navigation: true,
         navigationPosition: 'right',
         onLeave: this.onLeave
       }
