@@ -7,11 +7,11 @@
     <meta name="author" content="Vinh Pham">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+    <meta http-equiv="Content-Security-Policy" content="Content-Security-Policy: default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; object-src 'none'; form-action 'none'; base-uri 'self'">
     {{ HEAD }}
   </head>
   <body {{ BODY_ATTRS }}>
     {{ APP }}
-    <script src="https://cdn.jsdelivr.net/npm/gsap@2/umd/TweenMax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@2.1.2/umd/TweenMax.js" integrity="sha256-rlw6fVmYZwgOxaUrKsoUFICZmt9kNYw/YtFl1PFviDQ=" crossorigin="anonymous"></script>
   </body>
 </html>
