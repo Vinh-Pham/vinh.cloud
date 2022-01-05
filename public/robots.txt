@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://vinh.cloud
+
+# Sitemaps
+Sitemap: https://vinh.cloud/sitemap.xml
