@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, Heading, Text, useColorModeValue, VStack } from '@chakra-ui/react'
+import { Box, Button, Grid, GridItem, Heading, Text, useColorModeValue, VStack } from '@chakra-ui/react'
 import * as React from 'react'
 import Image from 'next/image'
 import { CardContent } from '../components/CardContent'
@@ -69,6 +69,9 @@ const Index = () => (
         <Brand src="/svgs/postman.svg" brand="Postman" />
         <Brand src="/svgs/figma.svg" brand="Figma" />
       </Grid>
+    </CardInfo>
+    <CardInfo cardTitle="Resume">
+      <Button as="a" colorScheme="blue" target="_blank" href="https://vinh.cloud/static/resume.pdf">View My Resume</Button>
     </CardInfo>
   </Box>
 )

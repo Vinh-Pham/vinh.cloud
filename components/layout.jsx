@@ -1,14 +1,11 @@
 import { NextSeo } from 'next-seo'
-import Script from 'next/script'
-import { Header } from './header/Header'
-import { Footer } from './footer/Footer'
 
 export default function Layout({ children }) {
   const description = 'Vinh Pham is a Full Stack in Houston, TX that uses React and Vue to build web applications and NestJS for API backends'
   return (
     <>
       <NextSeo
-        title='Vinh Pham Full-Stack Developer'
+        title='Full Stack Developer'
         titleTemplate = 'Vinh Pham | %s'
         description={description}
         canonical="https://vinh.cloud/"
