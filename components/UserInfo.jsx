@@ -33,10 +33,6 @@ export const UserInfo = (props) => {
         <Icon as={FaGithub} />
         <Text as="a" href={`https://github.com/${github}`}>GitHub</Text>
       </HStack>
-      <HStack>
-        <Icon as={FaBirthdayCake} />
-        <Text>{memberSince}</Text>
-      </HStack>
     </Stack>
   )
 }
