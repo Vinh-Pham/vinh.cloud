@@ -96,14 +96,12 @@ const Index = () => {
         </Grid>
       </CardInfo>
       <CardInfo cardTitle="Resume">
-        <Flex justify="center">
-          <Button as="a" leftIcon={<HiDownload />} colorScheme="blue" target="_blank" href="https://vinh.cloud/resume.pdf">Download</Button>
-          {
-            isLargerThan900 && (
-              <Button ml={4} leftIcon={<HiEye />} onClick={onOpen} colorScheme="blue">View</Button>
-            )
-          }
-        </Flex>
+        <Button as="a" leftIcon={<HiDownload />} colorScheme="blue" target="_blank" href="https://vinh.cloud/resume.pdf">Download</Button>
+        {
+          isLargerThan900 && (
+            <Button ml={4} leftIcon={<HiEye />} onClick={onOpen} colorScheme="blue">View</Button>
+          )
+        }
       </CardInfo>
     </Box>
   )
