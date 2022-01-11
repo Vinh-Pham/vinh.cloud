@@ -1,4 +1,13 @@
-import { Box, Button, Flex, Grid, GridItem, Heading, Text, useColorModeValue, VStack,
+import {
+  Box,
+  Button,
+  Grid,
+  GridItem,
+  Heading,
+  Text,
+  useColorModeValue,
+  VStack,
+  HStack,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -10,6 +19,7 @@ import { Box, Button, Flex, Grid, GridItem, Heading, Text, useColorModeValue, VS
  } from '@chakra-ui/react'
 import { HiDownload, HiEye } from 'react-icons/hi'
 import * as React from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import { CardContent } from '../components/CardContent'
 import CardWithSocialLinks from '../components/CardSocialLinks'
@@ -96,12 +106,20 @@ const Index = () => {
         </Grid>
       </CardInfo>
       <CardInfo cardTitle="Resume">
-        <Button as="a" leftIcon={<HiDownload />} colorScheme="blue" target="_blank" href="https://vinh.cloud/resume.pdf">Download</Button>
-        {
-          isLargerThan900 && (
-            <Button ml={4} leftIcon={<HiEye />} onClick={onOpen} colorScheme="blue">View</Button>
-          )
-        }
+        <HStack>
+          <Button as="a" leftIcon={<HiDownload />} colorScheme="blue" target="_blank" href="https://vinh.cloud/resume.pdf">Download PDF</Button>
+          {
+            isLargerThan900 ? (
+              <Button ml={4} leftIcon={<HiEye />} onClick={onOpen} colorScheme="blue">View Resume</Button>
+            ) : (
+              <Link href="/resume" passhref>
+                <a target="_blank" rel="noreferrer">
+                  <Button href="/resume" ml={4} leftIcon={<HiEye />} colorScheme="blue">View Resume</Button>
+                </a>
+              </Link>
+            )
+          }
+        </HStack>
       </CardInfo>
     </Box>
   )
