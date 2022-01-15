@@ -1,13 +1,13 @@
 import {
   Box,
   Button,
+  Flex,
   Grid,
   GridItem,
   Heading,
   Text,
   useColorModeValue,
   VStack,
-  HStack,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -26,6 +26,7 @@ import CardWithSocialLinks from '../components/CardSocialLinks'
 import { CardWithAvatar } from '../components/CardWithAvatar'
 import { UserInfo } from '../components/UserInfo'
 import { CardInfo } from '../components/CardInfo'
+import ContactForm from '../components/ContactForm'
 
 const Brand = ({ src, brand }) => (
   <GridItem display="flex" justifyContent="center">
@@ -105,8 +106,14 @@ const Index = () => {
           <Brand src="/svgs/figma.svg" brand="Figma" />
         </Grid>
       </CardInfo>
+      <CardInfo cardTitle="My Work">
+        <Box as="a" href="https://elvee.studio">
+          <Image src="/work-1.png" width={1920} height={1000} />
+          <Heading align="center" size="md" mt={4}>Elvee Studio</Heading>
+        </Box>
+      </CardInfo>
       <CardInfo cardTitle="Resume">
-        <HStack>
+        <Flex flexDirection={{ base: 'column', md: 'row' }}>
           <Button as="a" leftIcon={<HiDownload />} colorScheme="blue" target="_blank" href="https://vinh.cloud/resume.pdf">Download PDF</Button>
           {
             isLargerThan900 ? (
@@ -114,13 +121,14 @@ const Index = () => {
             ) : (
               <Link href="/resume" passhref>
                 <a target="_blank" rel="noreferrer">
-                  <Button href="/resume" ml={4} leftIcon={<HiEye />} colorScheme="blue">View Resume</Button>
+                  <Button href="/resume" ml={{ base: 0, md: 4 }} mt={{ base: 4, md: 0 }} isFullWidth leftIcon={<HiEye />} colorScheme="blue">View Resume</Button>
                 </a>
               </Link>
             )
           }
-        </HStack>
+        </Flex>
       </CardInfo>
+      <ContactForm />
     </Box>
   )
 }
