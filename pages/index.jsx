@@ -86,12 +86,11 @@ const Index = () => {
       </CardInfo>
       <CardInfo cardTitle="Tech Stack">
         <Grid templateColumns="repeat(4, 1fr)" gap={4}>
+          <Brand src="/svgs/laravel.svg" brand="Laravel" />
           <Brand src="/svgs/typescript.svg" brand="TypeScript" />
-          <Brand src="/svgs/nodejs-black.svg" brand="NodeJS" />
           <Brand src="/svgs/react.svg" brand="React" />
           <Brand src="/svgs/vue.svg" brand="Vue" />
           <Brand src="/svgs/gatsby_logo.svg" brand="Gatsby" />
-          <Brand src="/svgs/nest_logo.svg" brand="Nest" />
           <Brand src="/svgs/Postgresql_elephant.svg" brand="PostgreSQL" />
           <Brand src="/svgs/graphql.svg" brand="Graphql" />
         </Grid>
@@ -99,11 +98,12 @@ const Index = () => {
       <CardInfo cardTitle="Software">
         <Grid templateColumns="repeat(4, 1fr)" gap={4}>
           <Brand src="/svgs/vscode.svg" brand="VSCode" />
-          <Brand src="/svgs/webstorm.svg" brand="Webstorm" />
-          <Brand src="/svgs/datagrip.svg" brand="DataGrip" />
+          <Brand src="/svgs/phpstorm.svg" brand="PHPStorm" />
+          <Brand src="/svgs/tableplus.png" brand="TablePlus" />
           <Brand src="/svgs/git-icon.svg" brand="Git" />
           <Brand src="/svgs/postman.svg" brand="Postman" />
           <Brand src="/svgs/figma.svg" brand="Figma" />
+          <Brand src="/svgs/notion.svg" brand="Notion" />
         </Grid>
       </CardInfo>
       <CardInfo cardTitle="My Work">
