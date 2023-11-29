@@ -6,11 +6,14 @@ data:
       id: EFAJYls3
       name: Twitter
       url: 'https://twitter.com/vinhtpham'
+      icon_name: twitter
     -
       id: DdSyZ0yC
       name: Github
       url: 'https://github.com/Vinh-Pham'
+      icon_name: github
     -
       id: QO2Stf1I
       name: Email
       url: 'mailto:vinh@vinh.cloud'
+      icon_name: email

@@ -1,0 +1,13 @@
+tree:
+  -
+    id: 06d5dc51-0be6-4767-a1e1-1cffe8133d70
+    title: 'Privacy Policy'
+    url: /privacy-policy
+  -
+    id: b4d43c4b-cc0e-453c-b6bb-2c50a6910273
+    title: 'Terms of Service'
+    url: /terms-of-service
+  -
+    id: 85b8a7b6-d24c-4874-b186-d57f7280b101
+    title: 'Cookie Policy'
+    url: /cookie-policy

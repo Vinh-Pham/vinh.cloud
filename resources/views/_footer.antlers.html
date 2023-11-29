@@ -1,9 +1,20 @@
 <nav class="flex items-center justify-between flex-wrap py-12 lg:py-24 max-w-5xl mx-auto">
-    <div class="text-sm">&copy; <span class="align-super font-bold text-[10px]">{{ now format="Y" }}</span> {{ settings:site_name }}</div>
-    <div class="flex items-center">
+    <div>
+        <div class="text-xs space-x-2 mb-1">
+            {{ nav:footer }}
+                <a href="{{ url }}" aria-label="{{ title }}">
+                    {{ title }}
+                </a>
+            {{ /nav:footer }}
+        </div>
+        <div class="text-sm">&copy; <span class="align-super font-bold text-[10px]">
+            {{ now format="Y" }}</span> {{ settings:site_name }}
+        </div>
+    </div>
+    <div class="flex items-center space-x-4">
         {{ settings:social }}
             <a href="{{ url }}" class="ml-4" aria-label="{{ name }}" rel="noopener">
-                {{ svg :src="icon" class="h-6 w-6 hover:text-teal" }}
+                {{ svg :src="'/assets/site/social-icons/{{icon_name}}'" class="w-4 h-4 text-gray-700" }}
             </a>
         {{ /settings:social }}
     </div>
