@@ -1,0 +1,51 @@
+title: Topic
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              display: Title
+              validate:
+                - required
+          -
+            handle: svg_filename
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'SVG Filename'
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              required: true
+              validate:
+                - required
+  SEO:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            handle: seo
+            field:
+              type: seo_pro
+              listable: false
+              display: SEO

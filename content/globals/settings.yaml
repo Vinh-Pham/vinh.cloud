@@ -1,0 +1,16 @@
+title: Settings
+data:
+  site_name: Vinh.cloud
+  social:
+    -
+      id: EFAJYls3
+      name: Twitter
+      url: 'https://twitter.com/vinhtpham'
+    -
+      id: DdSyZ0yC
+      name: Github
+      url: 'https://github.com/Vinh-Pham'
+    -
+      id: QO2Stf1I
+      name: Email
+      url: 'mailto:vinh@vinh.cloud'

@@ -1,0 +1,51 @@
+<div class="max-w-5xl mx-auto relative mt-16">
+    {{ svg src="/assets/site/scratches" class="absolute text-gray-800 mt-8 top-0 left-0 w-20 hidden md:block" }}
+    <article class="py-32 max-w-2xl mx-auto">
+        <header class="content mb-16">
+            <h1>{{ title }}</h1>
+            {{ content | widont }}
+        </header>
+
+        {{ collection:articles as="articles" paginate="10" }}
+        {{ if no_results }}
+        <h2 class="text-3xl italic tracking-tight">There are currently no articles available. Check back later!</h2>
+        {{ /if }}
+
+        {{ articles }}
+        <div class="flex items-center mb-2">
+            <div class="text-sm font-bold mr-2">
+                {{ date format="m-j-y" }}
+            </div>
+            <a href="{{ url }}" class="text-xl hover:text-teal tracking-tight leading-tight font-bold">
+                {{ title | widont }}
+            </a>
+        </div>
+        {{ if topics }}
+            <div class="flex space-x-2 mb-8">
+                {{ topics }}
+                <div class="border px-2 rounded-md flex items-center">
+                    {{ svg :src="'/assets/site/topic-icons/{{svg_filename}}'" class="w-3 h-3 mr-2" }}
+                    <a href="{{ url }}" class="text-sm text-black font-medium no-underline hover:text-teal">{{ title }}</a>
+                </div>
+                {{ /topics }}
+            </div>
+        {{ else }}
+            <div class="mb-8"></div>
+        {{ /if }}
+        {{ /articles }}
+
+        {{ paginate }}
+        {{ if prev_page || next_page }}
+        <div class="flex justify-between text-xl -mx-16 pt-16 font-bold">
+            <a href="{{ prev_page }}" class="{{ ! prev_page ?= 'opacity-25' }}">
+                &larr; Back to the future
+            </a>
+            <a href="{{ next_page }}">
+                Forward to the past &rarr;
+            </a>
+        </div>
+        {{ /if }}
+        {{ /paginate }}
+        {{ /collection:articles }}
+    </article>
+</div>
