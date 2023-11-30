@@ -1,22 +1,56 @@
 <div class="max-w-5xl mx-auto relative mt-16 content">
     {{ svg src="/assets/site/scratches" class="absolute text-gray-800 mt-8 top-0 left-0 w-20 hidden lg:block" }}
-    <article class="lg:py-32 max-w-2xl mx-auto">
-        <h1>{{ title }}</h1>
-        <div class="bg-gray-800 inline-block text-sm mb-8 pr-4 pl-16 -ml-16 uppercase tracking-widest text-white py-1">
-            Published on {{ date format="M j, Y" }}
-        </div>
-        {{ if topics }}
-            <div class="flex space-x-4 mb-8">
-                {{ topics }}
-                <div class="border px-3 py-1 rounded-md flex items-center">
-                    {{ svg :src="'/assets/site/topic-icons/{{svg_filename}}'" class="w-4 h-4 mr-2" }}
-                    <a href="{{ url }}" class="text-black font-black no-underline hover:text-teal">{{ title }}</a>
+    <article class="lg:py-32 mx-auto">
+        {{ if hero }}
+            {{ hero }}
+                <div class="mb-8">
+                    <img alt="{{ alt }}" src="{{ url }}" />
                 </div>
-                {{ /topics }}
-            </div>
+            {{ /hero }}
         {{ /if }}
-        <div class="content">
-            {{ content | widont }}
+        <div class="max-w-2xl mx-auto">
+            <h1>{{ title }}</h1>
+            <div class="bg-gray-800 inline-block text-sm mb-8 pr-4 pl-16 -ml-16 uppercase tracking-widest text-white py-1">
+                Published on {{ date format="M j, Y" }}
+            </div>
+            {{ if topics }}
+                <div class="flex space-x-4 mb-8">
+                    {{ topics }}
+                    <div class="border px-3 py-1 rounded-md flex items-center">
+                        {{ svg :src="'/assets/site/topic-icons/{{svg_filename}}'" class="w-4 h-4 mr-2" }}
+                        <a href="{{ url }}" class="text-black font-black no-underline hover:text-teal">{{ title }}</a>
+                    </div>
+                    {{ /topics }}
+                </div>
+            {{ /if }}
+            <div class="content">
+                {{ content | widont }}
+            </div>
+            {{ if author }}
+                {{ author }}
+                    <div class="relative border-t-8 border-b-8 border-black py-8 px-6 mt-24 mb-12">
+                        {{ svg src="/assets/site/information" class="absolute text-gray-800 -top-2 left-0 w-24 h-24 hidden sm:block" }}
+                        {{ svg src="/assets/site/stalactites" class="absolute text-gray-800 -bottom-20 right-4 w-20 h-20 hidden lg:block" }}
+                        <h3 class="text-xl font-black text-center">Written By</h3>
+                        {{ if avatar }}
+                            <img alt="{{ name }}" src="{{ avatar }}" class="w-16 h-16 !my-4 rounded-full mx-auto" />
+                        {{ else }}
+                            {{ svg src="/assets/site/user-circle" class="w-16 h-16 mx-auto" }}
+                        {{ /if }}
+                        <p class="font-black text-xl text-center mb-4">{{ name }}</p>
+                        <div class="text-sm text-center">
+                            <p>{{ description }}</p>
+                        </div>
+                    </div>
+                {{ /author }}
+            {{ /if }}
+            {{ paginate | dump }}
+            {{ paginate }}
+            <div class="mt-8 flex justify-between">
+                <a href="{{ prev_page }}" class="text-teal hover:text-teal-light">&larr; Previous article</a>
+                <a href="{{ next_page }}" class="text-teal hover:text-teal-light">Next article &rarr;</a>
+            </div>
+            {{ /paginate }}
         </div>
     </article>
 </div>

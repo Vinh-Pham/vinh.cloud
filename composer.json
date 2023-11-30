@@ -16,6 +16,7 @@
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
         "league/flysystem-aws-s3-v3": "^3.19",
+        "mitydigital/feedamic": "^2.2",
         "spiral/roadrunner-cli": "^2.5.0",
         "spiral/roadrunner-http": "^3.0.1",
         "statamic/cms": "^4.0",

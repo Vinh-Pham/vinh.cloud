@@ -1,4 +1,11 @@
 name: 'Vinh Pham'
 super: true
+avatar: avatars/black---white-background.png
+description: 'Vinh is a software engineer with decades of programming experience. During his free time he also enjoys programming as a hobby and enjoys watching movies with his wife.'
 id: 2b55297e-d8c1-4cda-ab0f-1227112fd652
 password_hash: $2y$10$XJhb7o5Y2wQsdD11JPhxOuCcWRHywRIn/KPWDnUwbMqNodudOYnAG
+preferences:
+  favorites:
+    -
+      name: 'Articles ‹ Collections'
+      url: collections/articles

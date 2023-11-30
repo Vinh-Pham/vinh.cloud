@@ -11,6 +11,25 @@ tabs:
               type: text
               display: Title
           -
+            handle: hero
+            field:
+              max_files: 1
+              min_files: 1
+              mode: list
+              container: assets
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'Hero Banner'
+              icon: assets
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
             handle: content
             field:
               type: markdown
@@ -41,17 +60,18 @@ tabs:
               antlers: false
               hide_display: false
           -
-            handle: excerpt
+            handle: meta_description
             field:
-              type: textarea
-              display: Excerpt
-              character_limit: 160
-          -
-            handle: author
-            field:
-              type: users
-              display: Author
-              default: current
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Meta Description'
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
   sidebar:
     display: Sidebar
     sections:
@@ -69,6 +89,12 @@ tabs:
               default: now
               validate:
                 - required
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+              default: current
           -
             handle: topics
             field:
