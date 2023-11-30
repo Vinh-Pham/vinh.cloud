@@ -1,21 +1,27 @@
-<nav class="flex items-center justify-between flex-wrap py-12 lg:py-24 max-w-5xl mx-auto">
-    <div>
-        <div class="text-xs space-x-2 mb-1">
-            {{ nav:footer }}
-                <a href="{{ url }}" aria-label="{{ title }}">
-                    {{ title }}
+<nav class="relative py-12 lg:py-24 bg-black mt-32 lg:mt-0">
+    {{ svg src="/assets/site/forest" class="w-24 h-24 absolute -top-20 right-8" }}
+    {{ svg src="/assets/site/forest" class="w-12 h-12 absolute -top-10 right-36" }}
+    {{ svg src="/assets/site/mountain-night" class="w-24 h-24 absolute -top-20 left-0" }}
+    {{ svg src="/assets/site/dinosaur-bones" class="w-24 h-24 absolute top-1/3 left-36" }}
+    <div class="max-w-5xl flex items-center justify-between flex-wrap mx-auto px-8 lg:px-0">
+        <div>
+            <div class="text-xs text-white space-x-2 mb-1">
+                {{ nav:footer }}
+                    <a class="hover:underline" href="{{ url }}" aria-label="{{ title }}">
+                        {{ title }}
+                    </a>
+                {{ /nav:footer }}
+            </div>
+            <div class="text-sm text-white">&copy; <span class="align-super font-bold text-[10px]">
+                {{ now format="Y" }}</span> {{ settings:site_name }}
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+            {{ settings:social }}
+                <a href="{{ url }}" class="ml-4" aria-label="{{ name }}" rel="noopener">
+                    {{ svg :src="'/assets/site/social-icons/{{icon_name}}'" class="w-4 h-4 text-gray-100" }}
                 </a>
-            {{ /nav:footer }}
+            {{ /settings:social }}
         </div>
-        <div class="text-sm">&copy; <span class="align-super font-bold text-[10px]">
-            {{ now format="Y" }}</span> {{ settings:site_name }}
-        </div>
-    </div>
-    <div class="flex items-center space-x-4">
-        {{ settings:social }}
-            <a href="{{ url }}" class="ml-4" aria-label="{{ name }}" rel="noopener">
-                {{ svg :src="'/assets/site/social-icons/{{icon_name}}'" class="w-4 h-4 text-gray-700" }}
-            </a>
-        {{ /settings:social }}
     </div>
 </nav>

@@ -9,9 +9,16 @@
         <meta name="theme-color" content="00908F">
         {{ vite src="resources/js/site.js|resources/css/site.css" }}
     </head>
-    <body class="bg-white font-sans leading-normal text-grey-800 px-4 sm:px-10" x-data="{ showMobileNav: false }">
+    <body class="relative bg-white font-sans leading-normal text-grey-800" x-data="{ showMobileNav: false }">
+        <div class="custom-shape-divider-bottom-1701324927">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+            </svg>
+        </div>
         {{ partial:nav }}
-        {{ template_content }}
+        <div class="px-10">
+            {{ template_content }}
+        </div>
         {{ partial:footer }}
         <script defer data-domain="vinh.cloud" src="https://plausible.io/js/script.js"></script>
     </body>

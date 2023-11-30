@@ -111,6 +111,26 @@ h1 {
   }
 }
 
+.custom-shape-divider-bottom-1701324927 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1701324927 svg {
+    position: relative;
+    display: block;
+    width: calc(300% + 1.3px);
+    height: 125px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1701324927 .shape-fill {
+    fill: #000000;
+}
 
 /* Responsive Wangjangling */
 @screen lg {
