@@ -7,8 +7,8 @@ module.exports = {
     ],
     theme: {
         fontFamily: {
-            sans: ['Inter', 'sans'],
-            mono: ['Menlo', 'monospace']
+            sans: ['Raleway', 'sans'],
+            mono: ['Roboto Mono', 'monospace']
         },
         extend: {
             colors: {
