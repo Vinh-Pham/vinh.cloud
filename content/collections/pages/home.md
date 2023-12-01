@@ -4,8 +4,9 @@ blueprint: home
 title: 'Programming Unpacked'
 template: home
 seo:
+  title: 'Vinh.cloud | Explore the latest trends and tips in programming'
   description: 'Explore the latest trends and tips in PHP and JavaScript coding on our programming blog. Dive into comprehensive guides, industry updates, and cutting-edge examples to elevate your web development skills.'
 updated_by: 2b55297e-d8c1-4cda-ab0f-1227112fd652
-updated_at: 1701389405
+updated_at: 1701415715
 subtitle: 'Simplifying Coding, One Article At A Time!'
 ---
