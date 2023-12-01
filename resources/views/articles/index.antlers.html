@@ -11,7 +11,7 @@
         <h2 class="text-3xl italic tracking-tight">There are currently no articles available. Check back later!</h2>
         {{ /if }}
 
-        {{ articles }}
+        {{ articles | sort="date:desc" }}
         <div class="flex items-center mb-2">
             <div class="text-sm font-bold mr-2">
                 {{ date format="m-j-y" }}
