@@ -14,7 +14,6 @@ tabs:
             handle: hero
             field:
               max_files: 1
-              min_files: 1
               mode: list
               container: assets
               restrict: false

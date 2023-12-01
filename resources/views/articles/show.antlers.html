@@ -44,7 +44,7 @@
                     </div>
                 {{ /author }}
             {{ /if }}
-            {{ paginate | dump }}
+            {{ partial:newsletter }}
             {{ paginate }}
             <div class="mt-8 flex justify-between">
                 <a href="{{ prev_page }}" class="text-teal hover:text-teal-light">&larr; Previous article</a>

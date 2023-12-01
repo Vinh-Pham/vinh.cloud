@@ -1,6 +1,7 @@
-<div class="max-w-5xl mx-auto relative py-16 lg:pt-40 lg:pb-32">
+<div class="max-w-5xl mx-auto relative py-16 lg:pt-40">
     <article class="content">
-        <p class="font-medium text-lg text-teal">{{ subtitle }}</p>
+        <h1 class="!mb-0">{{ title }}</h1>
+        <h2 class="font-bold text-2xl !my-0">{{ subtitle }}</h2>
         <h1>{{ content }}</h1>
     </article>
 </div>
@@ -12,12 +13,23 @@
         {{ /if }}
 
         {{ articles }}
+            <h1>The Latest</h1>
             <div class="mb-16">
                 <h2 class="mb-4">
                     <a href="{{ url }}" class="text-2xl hover:text-teal tracking-tight leading-tight font-bold">
                         {{ title | widont }}
                     </a>
                 </h2>
+                {{ if topics }}
+                    <div class="flex space-x-4 mb-4">
+                        {{ topics }}
+                        <div class="border px-2 rounded-md flex items-center">
+                            {{ svg :src="'/assets/site/topic-icons/{{svg_filename}}'" class="w-3 h-3 mr-2" }}
+                            <a href="{{ url }}" class="text-sm text-black font-medium no-underline hover:text-teal">{{ title }}</a>
+                        </div>
+                        {{ /topics }}
+                    </div>
+                {{ /if }}
                 <p class="text-gray-600">
                     <span class="text-gray-800 text-sm uppercase tracking-widest font-medium">{{ date }}</span> &mdash;
                     {{ excerpt | widont ?? content | strip_tags | safe_truncate(150, '...') }}
@@ -25,4 +37,5 @@
             </div>
         {{ /articles }}
     {{ /collection:articles }}
+    {{ partial:newsletter }}
 </div>

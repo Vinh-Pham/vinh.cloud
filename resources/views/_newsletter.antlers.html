@@ -1,0 +1,25 @@
+<div class="relative border-4 border-black p-8 mt-32">
+    {{ svg src="/assets/site/stamp" class="absolute text-gray-800 top-6 right-6 w-16 h-16 hidden lg:block" }}
+    <div class="text-2xl font-bold mb-4">Newsletter</div>
+    <div class="w-full lg:w-3/4 mb-8">
+        <p class="text-sm">
+            Subscribe to our newsletter for weekly or bi-weekly updates to our informative articles on the latest programming trends, tips, and tutorials.
+            Don't miss out on the wealth of knowledge we have to offer. It's completely <span class="underline font-black">free</span>, and you can opt out at any time.
+        </p>
+    </div>
+    <form
+        class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4"
+        action="https://elvee.mailcoach.app/subscribe/c424c723-3895-4fee-8712-b2cf34bbe570"
+        method="post"
+    >
+        <input class="border-2 border-black px-2 py-1 w-full focus:border-teal focus:outline-none placeholder:text-gray-500" type="email" name="email" placeholder="Your email address" />
+
+        <!--
+            Optional: include any tags. Create them first on the "Tags" section.
+            And make sure to allow them in the email list settings
+        -->
+        <input type="hidden" name="tags" value="tag 1;tag 2" />
+
+        <input class="cursor-pointer bg-black text-white font-black py-1 px-2 hover:text-teal-light" type="submit" value="Subscribe">
+    </form>
+</div>
