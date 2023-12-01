@@ -9,8 +9,3 @@ date: true
 date_behavior:
   past: public
   future: private
-inject:
-  seo:
-    description: '@seo:meta_description'
-    image: '@seo:hero'
-    twitter_handle: VinhTPham

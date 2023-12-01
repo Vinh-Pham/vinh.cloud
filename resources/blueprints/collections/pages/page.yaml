@@ -8,9 +8,12 @@ tabs:
           -
             handle: title
             field:
-              character_limit: 0
               type: text
+              required: true
+              character_limit: 0
               display: Title
+              validate:
+                - required
           -
             handle: content
             field:
@@ -26,6 +29,19 @@ tabs:
             field:
               type: template
               display: Template
+          -
+            handle: meta_description
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Meta Description'
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
   sidebar:
     display: Sidebar
     sections:
@@ -36,6 +52,7 @@ tabs:
             field:
               type: slug
               localizable: true
+              validate: 'max:200'
           -
             handle: parent
             field:
