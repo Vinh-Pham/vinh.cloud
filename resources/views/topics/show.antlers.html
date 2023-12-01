@@ -4,7 +4,7 @@
         <p class="font-medium text-teal mb-4">{{ heading ?? "Articles about" }}</p>
         <div class="flex items-center mb-8">
             {{ svg :src="'/assets/site/topic-icons/{{svg_filename}}'" class="w-20 h-20 mr-4" }}
-            <h1 class="mb-0">{{ title }} Topics</h1>
+            <h1 class="mb-0">{{ meta_title }}</h1>
         </div>
         {{ content }}
     </article>
