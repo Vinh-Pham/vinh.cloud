@@ -2,12 +2,12 @@
     <article class="content">
         <h1 class="!mb-0">{{ title }}</h1>
         <h2 class="font-bold text-2xl !my-0">{{ subtitle }}</h2>
-        <h1>{{ content }}</h1>
+        <p>{{ content }}</p>
     </article>
 </div>
 
 <div class="max-w-2xl mx-auto mb-32">
-    <h1>The Latest</h1>
+    <h2 class="text-5xl font-bold mb-8">The Latest</h2>
     {{ collection:articles limit="5" as="articles" }}
         {{ if no_results }}
             <h2 class="text-3xl italic tracking-tight">There are currently no articles available. Check back later!</h2>
