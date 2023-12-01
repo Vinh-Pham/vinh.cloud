@@ -7,13 +7,13 @@
 </div>
 
 <div class="max-w-2xl mx-auto mb-32">
+    <h1>The Latest</h1>
     {{ collection:articles limit="5" as="articles" }}
         {{ if no_results }}
             <h2 class="text-3xl italic tracking-tight">There are currently no articles available. Check back later!</h2>
         {{ /if }}
 
         {{ articles }}
-            <h1>The Latest</h1>
             <div class="mb-16">
                 <h2 class="mb-4">
                     <a href="{{ url }}" class="text-2xl hover:text-teal tracking-tight leading-tight font-bold">
