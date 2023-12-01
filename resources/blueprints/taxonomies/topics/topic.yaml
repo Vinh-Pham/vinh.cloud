@@ -27,6 +27,19 @@ tabs:
               replicator_preview: true
               hide_display: false
           -
+            handle: meta_title
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Meta Title'
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
             handle: meta_description
             field:
               input_type: text
