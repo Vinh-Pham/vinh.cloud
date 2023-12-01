@@ -3,9 +3,10 @@ id: 1d158428-8050-4ec0-9959-6df7c19ea48a
 blueprint: page
 title: 'Privacy Policy'
 updated_by: 2b55297e-d8c1-4cda-ab0f-1227112fd652
-updated_at: 1701241259
+updated_at: 1701446409
 navs_field:
   - footer
+meta_description: 'Privacy Policy for Vinh.cloud'
 ---
 Vinh operates the https://vinh.cloud website, which provides the SERVICE.
 

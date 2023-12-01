@@ -3,9 +3,10 @@ id: 10786e69-ea0c-46c2-ad74-3f50503c1589
 blueprint: page
 title: 'Terms of Service'
 updated_by: 2b55297e-d8c1-4cda-ab0f-1227112fd652
-updated_at: 1701241774
+updated_at: 1701446378
 navs_field:
   - footer
+meta_description: 'Terms of Service for Vinh.cloud'
 ---
 1\. Terms
 ---------

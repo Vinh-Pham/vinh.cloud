@@ -3,7 +3,8 @@ id: 927ca988-d1ac-4efd-9c5f-c03ab2bca9ca
 blueprint: page
 title: 'Cookie Policy'
 updated_by: 2b55297e-d8c1-4cda-ab0f-1227112fd652
-updated_at: 1701241382
+updated_at: 1701446396
+meta_description: 'Cookie Policy for Vinh.cloud'
 ---
 This is the Cookie Policy for Vinh.cloud, accessible from https://vinh.cloud
 
