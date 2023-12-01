@@ -9,7 +9,10 @@ tabs:
             handle: title
             field:
               type: text
+              required: true
               display: Title
+              validate:
+                - required
           -
             handle: hero
             field:
@@ -71,6 +74,17 @@ tabs:
               visibility: visible
               replicator_preview: true
               hide_display: false
+          -
+            handle: video
+            field:
+              type: video
+              display: Video
+              icon: video
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
   sidebar:
     display: Sidebar
     sections:
@@ -81,10 +95,12 @@ tabs:
             field:
               type: slug
               localizable: true
+              validate: 'max:200'
           -
             handle: date
             field:
               type: date
+              required: true
               default: now
               validate:
                 - required
