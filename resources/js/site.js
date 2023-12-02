@@ -35,24 +35,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function copyToClipboard(text) {
-        const textarea = document.createElement("textarea");
-        textarea.textContent = text;
-        document.body.appendChild(textarea);
-
-        const selection = document.getSelection();
-        const savedRanges = [];
-        for (let i = 0; i < selection.rangeCount; i++) {
-            savedRanges[i] = selection.getRangeAt(i).cloneRange();
+        try {
+            window.navigator.clipboard.writeText(text)
+        } catch {
+            // Use unsecure workaround
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+            } catch (err) {
+                console.error('Unable to copy to clipboard', err);
+            }
+            document.body.removeChild(textArea);
         }
-        selection.removeAllRanges();
-        textarea.select();
-        document.execCommand('copy');
-
-        selection.removeAllRanges();
-        for (let i = 0; i < savedRanges.length; i++) {
-            selection.addRange(savedRanges[i]);
-        }
-
-        document.body.removeChild(textarea);
     }
 })
