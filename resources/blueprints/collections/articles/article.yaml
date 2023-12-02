@@ -38,9 +38,9 @@ tabs:
               display: Content
               restrict: false
               automatic_line_breaks: true
-              automatic_links: false
+              automatic_links: true
               escape_markup: false
-              smartypants: false
+              smartypants: true
               instructions_position: above
               listable: hidden
               visibility: visible

@@ -38,7 +38,7 @@ h1 {
     }
 
     img {
-        @apply my-12;
+        @apply my-12 rounded-md;
     }
 
     a {
